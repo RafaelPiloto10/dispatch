@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service Dispatch {
+  rpc CreateJob(CreateJobRequest) returns (CreateJobResponse) {}
+  rpc GetJob(GetJobRequest) returns (GetJobResponse) {}
+}
+
+message CreateJobRequest {
+  string name = 1;
+  repeated string params = 2;
+}
+message CreateJobResponse { string name = 1; }
+
+message GetJobRequest {}
+message GetJobResponse {
+  string name = 1;
+  repeated string params = 2;
+}

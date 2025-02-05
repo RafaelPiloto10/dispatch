@@ -1,0 +1,2 @@
+#!/bin/sh
+bazel run --config=gcc12 @hedron_compile_commands//:refresh_all
