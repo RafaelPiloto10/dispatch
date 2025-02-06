@@ -11,6 +11,7 @@ To consume jobs, create workers with `bazel run //worker:main`.
 
 ## TODO
 
+- Implement scheduling algorithm so that higher nice Jobs are not starved
 - Persist life of workers and make them poll the server
   - Consider a push model where the broker load balances amongst workers rather than polling
 - Create more realistic "toy" jobs to simulate work load

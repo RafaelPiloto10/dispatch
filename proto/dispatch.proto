@@ -5,14 +5,20 @@ service Dispatch {
   rpc GetJob(GetJobRequest) returns (GetJobResponse) {}
 }
 
-message CreateJobRequest {
+message Job {
   string name = 1;
   repeated string params = 2;
+  optional int32 nice = 3;
 }
-message CreateJobResponse { string name = 1; }
 
-message GetJobRequest {}
+message CreateJobRequest {
+  Job job = 1;
+}
+message CreateJobResponse {}
+
+message GetJobRequest {
+  optional int32 nice = 1;
+}
 message GetJobResponse {
-  string name = 1;
-  repeated string params = 2;
+  Job job = 1;
 }

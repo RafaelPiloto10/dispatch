@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     std::cout << status.error_code() << ": " << status.error_message()
               << std::endl;
   } else {
-    std::cout << "Got job: " << response.name() << std::endl;
+    std::cout << "Got job: " << response.job().name() << std::endl;
   }
 
   return 0;

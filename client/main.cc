@@ -20,9 +20,9 @@ int main(int argc, char **argv) {
   grpc::ClientContext context;
   CreateJobResponse response;
   CreateJobRequest request;
-  request.set_name("client-job-name");
-  *request.add_params() = "param-1";
-  *request.add_params() = "param-2";
+  request.mutable_job()->set_name("client-job-name");
+  *request.mutable_job()->add_params() = "param-1";
+  *request.mutable_job()->add_params() = "param-2";
 
   std::unique_ptr<Dispatch::Stub> stub = Dispatch::NewStub(channel);
 
